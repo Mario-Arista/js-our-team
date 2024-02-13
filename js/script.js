@@ -43,45 +43,45 @@ for (let i = 0; i < businessCards.length; i++) {
 }
 
 
-//  Stampo in pagina nome e posizione
+//  Stampo in pagina nome, posizione e immagine
 for (let i = 0; i < businessCards.length; i++) {
 
     // Creo nuovi elementi HTML per nome e posizioni
     let nameElement = document.createElement("div");
     let positionElement = document.createElement("div");
+    let imageElement = document.createElement("img");
 
     // Ciclo per iterare nomi e posizioni dentro oggetti
     for (let key in businessCards[i]) {
 
         let field = businessCards[i][key];
 
+        // Aggiungo nome dentro nameElement
         if (key === 'fullname') {
 
             nameElement.innerText = field;
 
+        // Aggiungo nome dentro positionElement
         } else if (key === 'position') {
 
             positionElement.innerText = field;
+        
+        // Aggiungo immagine dentro imageElement
+        } else if (key === 'image') {
 
+            // Cambio l'immagine prendendo l'URL dall'array
+            let imageUrl = businessCards[i][key];
+            imageElement.src = `./img/${imageUrl}`;
         }
 
     }
-
+    
     // Stampo in pagina
+    document.getElementById(`card-${i + 1}`).append(imageElement);
     document.getElementById(`card-${i + 1}`).append(nameElement);
     document.getElementById(`card-${i + 1}`).append(positionElement);
 }
 
-
-
-/*
-
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede
-
-*/
 
 
 
