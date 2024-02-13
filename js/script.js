@@ -76,9 +76,15 @@ for (let i = 0; i < businessCards.length; i++) {
 
     }
     
-    // Stampo in pagina
+    // Stampo in pagina immgine e aggiungo una classe
     document.getElementById(`card-${i + 1}`).append(imageElement);
+    imageElement.classList.add("img-fluid");
+
+    // Stampo in pagina nome e aggiungo una classe
     document.getElementById(`card-${i + 1}`).append(nameElement);
+    nameElement.classList.add("name");
+    
+    // Stampo in pagina position 
     document.getElementById(`card-${i + 1}`).append(positionElement);
 }
 
