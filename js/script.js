@@ -83,9 +83,10 @@ for (let i = 0; i < businessCards.length; i++) {
     // Stampo in pagina nome e aggiungo una classe
     document.getElementById(`card-${i + 1}`).append(nameElement);
     nameElement.classList.add("name");
-    
-    // Stampo in pagina position 
+
+    // Stampo in pagina position e aggiungo una classe
     document.getElementById(`card-${i + 1}`).append(positionElement);
+    positionElement.classList.add("text-secondary");
 }
 
 
