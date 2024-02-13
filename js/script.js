@@ -1,16 +1,6 @@
-/*
+// MILESTONE 0
+// Creo l’array di oggetti con le informazioni fornite.
 
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede
-
-*/
-
-/*
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
-*/
 const businessCards = [
     {
         fullname: "Wayne Barnett",
@@ -45,33 +35,53 @@ const businessCards = [
 
 ];
 
-/*
-MILESTONE 1:
-Stampare su console, per ogni membro del team,
-le informazioni di nome, ruolo e la stringa della foto
-*/
+// MILESTONE 1
+// Stampo in console tutti gli oggetti dell'array
 
 for (let i = 0; i < businessCards.length; i++) {
     console.log(`Collega n. ${i + 1}`, businessCards[i]);
 }
 
-/*
-MILESTONE 2:
-Stampare le stesse informazioni su DOM 
-sottoforma di stringhe
-*/
 
+//  Stampo in pagina nome e posizione
 for (let i = 0; i < businessCards.length; i++) {
 
-    let newElement = document.createElement("div");
+    // Creo nuovi elementi HTML per nome e posizioni
+    let nameElement = document.createElement("div");
+    let positionElement = document.createElement("div");
 
+    // Ciclo per iterare nomi e posizioni dentro oggetti
     for (let key in businessCards[i]) {
-        let fields = businessCards[i][key];
-        newElement.innerHTML += `${key}` + ": " + `${fields}` + " ";
+
+        let field = businessCards[i][key];
+
+        if (key === 'fullname') {
+
+            nameElement.innerText = field;
+
+        } else if (key === 'position') {
+
+            positionElement.innerText = field;
+
+        }
+
     }
 
-    document.getElementById(`card-${i + 1}`).append(newElement);
+    // Stampo in pagina
+    document.getElementById(`card-${i + 1}`).append(nameElement);
+    document.getElementById(`card-${i + 1}`).append(positionElement);
 }
+
+
+
+/*
+
+BONUS 1:
+Trasformare la stringa foto in una immagine effettiva
+BONUS 2:
+Organizzare i singoli membri in card/schede
+
+*/
 
 
 
