@@ -5,32 +5,32 @@ const businessCards = [
     {
         fullname: "Wayne Barnett",
         position:"Founder & CEO",
-        image: `wayne-barnett-founder-ceo.jpg`
+        image: "wayne-barnett-founder-ceo.jpg"
     },
     {
         fullname: "Angela Caroll",
         position:"Chief Editor",
-        image: `angela-caroll-chief-editor.jpg`
+        image: "angela-caroll-chief-editor.jpg"
     },
     {
         fullname: "Walter Gordon",
         position:"Office Manager",
-        image: `walter-gordon-office-manager.jpg`
+        image: "walter-gordon-office-manager.jpg"
     },
     {
         fullname: "Angela Lopez",
         position:"Social Media Manager",
-        image: `angela-lopez-social-media-manager.jpg`
+        image: "angela-lopez-social-media-manager.jpg"
     },
     {
         fullname: "Scott Estrada",
         position:"Developer",
-        image: `scott-estrada-developer.jpg`
+        image: "scott-estrada-developer.jpg"
     },
     {
         fullname: "Barbara Ramos",
         position:"Graphic Designer",
-        image: `barbara-ramos-graphic-designer.jpg`
+        image: "barbara-ramos-graphic-designer.jpg"
     },
 
 ];
@@ -57,20 +57,21 @@ for (let i = 0; i < businessCards.length; i++) {
         let field = businessCards[i][key];
 
         // Aggiungo nome dentro nameElement
-        if (key === 'fullname') {
+        if (key === "fullname") {
 
             nameElement.innerText = field;
 
         // Aggiungo nome dentro positionElement
-        } else if (key === 'position') {
+        } else if (key === "position") {
 
             positionElement.innerText = field;
         
         // Aggiungo immagine dentro imageElement
-        } else if (key === 'image') {
+        } else if (key === "image") {
 
             // Cambio l'immagine prendendo l'URL dall'array
             let imageUrl = businessCards[i][key];
+            
             imageElement.src = `./img/${imageUrl}`;
         }
 
