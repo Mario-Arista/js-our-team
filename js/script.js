@@ -1,6 +1,5 @@
 /*
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
+
 BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
@@ -56,6 +55,23 @@ for (let i = 0; i < businessCards.length; i++) {
     console.log(`Collega n. ${i + 1}`, businessCards[i]);
 }
 
+/*
+MILESTONE 2:
+Stampare le stesse informazioni su DOM 
+sottoforma di stringhe
+*/
+
+for (let i = 0; i < businessCards.length; i++) {
+
+    let newElement = document.createElement("div");
+
+    for (let key in businessCards[i]) {
+        let fields = businessCards[i][key];
+        newElement.innerHTML += `${key}` + ": " + `${fields}` + " ";
+    }
+
+    document.getElementById(`card-${i + 1}`).append(newElement);
+}
 
 
 
