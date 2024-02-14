@@ -39,7 +39,13 @@ const businessCards = [
 // Stampo in console tutti gli oggetti dell'array
 
 for (let i = 0; i < businessCards.length; i++) {
-    console.log(`Collega n. ${i + 1}`, businessCards[i]);
+
+    const actualmember = businessCards[i];
+
+    for (let key in actualmember) {
+        console.log(`${key}: ${actualmember[key]}`, businessCards[i]);
+    }
+    
 }
 
 
@@ -73,6 +79,7 @@ for (let i = 0; i < businessCards.length; i++) {
             let imageUrl = businessCards[i][key];
             
             imageElement.src = `./img/${imageUrl}`;
+            imageElement.alt = "Immagine membro";
         }
 
     }
